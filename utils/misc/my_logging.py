@@ -10,9 +10,9 @@ logging.basicConfig(
 
 def exception_hook(exctype, value, traceback):
     """
-    :param exctype:
-    :param value:
-    :param traceback:
+    :param exctype: exception class
+    :param value: exception exemplar
+    :param traceback: exception exemplar tracing
     :return:
     Функция перехвата непредвиденных ошибок
     """
