@@ -46,18 +46,19 @@ border-radius: 10px;
 padding: 4px;</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="criteriy_poiska">
+  <widget class="QComboBox" name="search_criteria">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>730</x>
      <y>120</y>
-     <width>181</width>
+     <width>221</width>
      <height>22</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: white;
-box-shadow: null;</string>
+padding: 15px;
+</string>
    </property>
    <item>
     <property name="text">
@@ -71,9 +72,51 @@ box-shadow: null;</string>
    </item>
    <item>
     <property name="text">
-     <string>Поиск почему?</string>
+     <string>Поиск по наименованию продукции?</string>
     </property>
    </item>
+   <item>
+    <property name="text">
+     <string>Поиск по типу изделия</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Поиск по номеру заказа</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Поиск по организации</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Поиск по потребителю</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Поиск по ФИО выдавшего сертификат</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="find_btn">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>110</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 20px;</string>
+   </property>
+   <property name="text">
+    <string>НАЙТИ</string>
+   </property>
   </widget>
   <widget class="QWidget" name="">
    <property name="geometry">
@@ -122,8 +165,9 @@ color: #3ef3d3;</string>
   <zorder>label_2</zorder>
   <zorder>table</zorder>
   <zorder>search_line</zorder>
-  <zorder>criteriy_poiska</zorder>
+  <zorder>search_criteria</zorder>
   <zorder>label_3</zorder>
+  <zorder>find_btn</zorder>
  </widget>
  <resources/>
  <connections/>
