@@ -49,16 +49,14 @@ padding: 4px;</string>
   <widget class="QComboBox" name="search_criteria">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>700</x>
      <y>120</y>
      <width>221</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: white;
-padding: 15px;
-</string>
+    <string notr="true">background-color: white;</string>
    </property>
    <item>
     <property name="text">
@@ -104,18 +102,28 @@ padding: 15px;
   <widget class="QPushButton" name="find_btn">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>290</x>
      <y>110</y>
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: white;
 border-radius: 20px;</string>
    </property>
    <property name="text">
-    <string>НАЙТИ</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../image/design/button_icons/search.png</normaloff>../image/design/button_icons/search.png</iconset>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -165,18 +173,73 @@ color: #3ef3d3;</string>
   <widget class="QPushButton" name="reset_search_btn">
    <property name="geometry">
     <rect>
-     <x>490</x>
+     <x>340</x>
      <y>110</y>
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: white;
 border-radius: 20px;</string>
    </property>
    <property name="text">
-    <string>СБРОСИТЬ</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../image/design/button_icons/reset.png</normaloff>../image/design/button_icons/reset.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="add_certificate_btn">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>110</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 20px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../image/design/button_icons/plus.png</normaloff>../image/design/button_icons/plus.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="print_btn">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>110</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 20px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../image/design/button_icons/printer.png</normaloff>../image/design/button_icons/printer.png</iconset>
    </property>
   </widget>
   <zorder>layoutWidget</zorder>
@@ -185,6 +248,8 @@ border-radius: 20px;</string>
   <zorder>search_criteria</zorder>
   <zorder>find_btn</zorder>
   <zorder>reset_search_btn</zorder>
+  <zorder>add_certificate_btn</zorder>
+  <zorder>print_btn</zorder>
  </widget>
  <resources/>
  <connections/>

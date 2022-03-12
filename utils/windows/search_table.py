@@ -1,6 +1,5 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QWidget, QTableWidgetItem, QMessageBox
-from PyQt5 import QtGui
 import sys
 import sqlite3
 
@@ -18,7 +17,7 @@ class TableWindow(QWidget):
         super().__init__()
         uic.loadUi('../../static/ui/search_table.ui', self)  # Загружаем дизайн
         self.con = sqlite3.connect('../../static/database/db.db')
-        self.columns_name = ['serial_number', 'number_certificate', 'product_name', 'product_type', 'order_number',
+        self.columns_name = ['index_number', 'number_certificate', 'product_name', 'product_type', 'order_number',
                              'consumer_organization', 'shop_manufacturer', 'full_name_of_the_certificate_issuer']
         self.reset_table()
         self.initUi()
@@ -26,6 +25,8 @@ class TableWindow(QWidget):
     def initUi(self):
         self.find_btn.clicked.connect(self.find_in_table)
         self.reset_search_btn.clicked.connect(self.reset_table)
+        self.add_certificate_btn.clicked.connect(self.add_certificate)
+        self.print_btn.clicked.connect(self.print_certificate)
 
     def fill_table(self, result):
         try:
@@ -50,7 +51,7 @@ class TableWindow(QWidget):
 
     def reset_table(self): # Возвращение таблицы к первоначальному состоянию
         cur = self.con.cursor()
-        self.fill_table(cur.execute(f"SELECT certificates.serial_number, "
+        self.fill_table(cur.execute(f"SELECT certificates.index_number, "
                                     f"certificates.number_certificate, "
                                     f"certificates.product_name, "
                                     f"certificates.product_type, "
@@ -71,8 +72,8 @@ class TableWindow(QWidget):
             return
 
         search_filter = self.search_criteria.currentIndex()
-        if search_filter < 2:
-            result = cur.execute(f"SELECT certificates.serial_number, "
+        if search_filter < 1:
+            result = cur.execute(f"SELECT certificates.index_number, "
                                  f"certificates.number_certificate, "
                                  f"certificates.product_name, "
                                  f"certificates.product_type, "
@@ -83,7 +84,7 @@ class TableWindow(QWidget):
                                  f"FROM certificates"
                                  f" WHERE {self.columns_name[search_filter]}={int(request)}").fetchall()
         else:
-            result = cur.execute(f"SELECT certificates.serial_number, "
+            result = cur.execute(f"SELECT certificates.index_number, "
                                  f"certificates.number_certificate, "
                                  f"certificates.product_name, "
                                  f"certificates.product_type, "
@@ -96,12 +97,16 @@ class TableWindow(QWidget):
 
         self.fill_table(result)
 
-
     def error_message(self, text):
         msg = QMessageBox()
         msg.setText(text)
         msg.exec_()
 
+    def add_certificate(self):
+        pass
+
+    def print_btn(self):
+        pass
 
 if __name__ == '__main__':
     sys.__excepthook__ = sys.__excepthook__
