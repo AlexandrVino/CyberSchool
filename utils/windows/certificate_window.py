@@ -75,14 +75,13 @@ class CertificateWindow(QDialog):
             Error('Пожалуйста заполните данные\nкорректно!', self).show()
             return
 
-        if not json_data['serial_number'].isnumeric():
+        if not json_data['serial_number'].isnumeric() or len(json_data['serial_number']) != 3:
             Error('Номер сертификата должен\nбыть числом! (XXX)', self).show()
             return
 
         lens = [2, 4]
-        if not all(x.isnumeric() and len(x) == lens[i] for i, x in
-                   enumerate(json_data['number_certificate'].split('-'))) or len(
-                json_data['number_certificate'].split('-')) != 2:
+        if not all(x.isnumeric() and len(x) == lens[i] for i, x in enumerate(json_data['number_certificate'].split('-'))) \
+                or len(json_data['number_certificate'].split('-')) != 2:
             Error('Номер сертификата должен\nбыть в формате: XX-XXXX!', self).show()
             return
 
