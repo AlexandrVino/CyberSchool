@@ -70,21 +70,20 @@ class DataBase:
         :return: None
         добавляет сертификат в бд
         """
-        list_of_value = dict_of_value.values()
+        list_of_value = list(dict_of_value.values())
         cur = self.con.cursor()
+        request = (f"INSERT OR IGNORE INTO certificates(index_number, number_certificate, "
+                  f"product_name, product_number, product_type, order_number, "
+                  f"consumer_organization, shop_manufacturer, "
+                  f"full_name_of_the_certificate_issuer, kit, draft_number, release_date, technical_conditions"
+                    f") "
+                    f"VALUES({list_of_value[0]}, {list_of_value[1]}, {list_of_value[3]}, {list_of_value[4]},"
+                    f" {list_of_value[5]}, {list_of_value[6]}, {list_of_value[7]}, {list_of_value[8]},"
+                    f" {list_of_value[9]}, {list_of_value[10]}, {list_of_value[11]}, "
+                    f" {list_of_value[12]}, {list_of_value[13]};")
+        cur.execute(request)
+        self.con.commit()
+        cur.close()
+        return 1
 
-        try:
-            cur.execute(f"INSERT OR IGNORE INTO certificates(index_number, number_certificate, "
-                        f"product_name, product_number, product_type, order_number, "
-                        f"consumer_organization, shop_manufacturer, release_date, "
-                        f"full_name_of_the_certificate_issuer, kit, draft_number, release_date, technical_conditions"
-                        f") "
-                        f"VALUES({list_of_value[0]}, {list_of_value[1]}, {list_of_value[3]}, {list_of_value[4]},"
-                        f" {list_of_value[5]}, {list_of_value[6]}, {list_of_value[7]}, {list_of_value[8]},"
-                        f" {list_of_value[9]}, {list_of_value[10]}, {list_of_value[11]}, "
-                        f" {list_of_value[12]}, {list_of_value[13]}, {list_of_value[14]};")
-        finally:
-            self.con.commit()
-            cur.close()
-            return 1
 
