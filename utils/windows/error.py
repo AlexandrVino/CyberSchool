@@ -7,11 +7,12 @@ class Error(QDialog):
     Класс формы подтверждения/ошибки
     """
 
-    def __init__(self, text: str, parent=None):
+    def __init__(self, text: str, parent=None, function='error'):
         super().__init__(parent)
         self.connect_ui()
         self.label.setText(text)
         self.parent = parent
+        self.function = function
 
     def connect_ui(self):
         """
@@ -27,4 +28,5 @@ class Error(QDialog):
                 break
 
     def save_finish(self):
-        self.parent.save_after_accept()
+        if self.function == 'accept':
+            self.parent.save_after_accept()

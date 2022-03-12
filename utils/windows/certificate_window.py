@@ -4,6 +4,7 @@ from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QTableWidgetItem, QMessageBox
+
 from .error import Error
 
 
@@ -45,7 +46,7 @@ class CertificateWindow(QDialog):
         event.accept()
 
     def save_changes(self):
-        Error('Пожалуйста проверьте данные!', self).show()
+        Error('Пожалуйста проверьте данные\nперед сохранением!', self, 'accept').show()
 
     def cancel_window(self):
         self.destroy()
@@ -66,5 +67,9 @@ class CertificateWindow(QDialog):
             "release_date": self.release_date.text(),
             "technical_conditions": self.technical_conditions.text()
         }
-        
+
+        if not all(value != '' for value in json_data.values()):
+            Error('Пожалуйста заполните данные\nкорректно!', self).show()
+            return
+
         self.db.add_certificate(json_data)
