@@ -31,5 +31,7 @@ def create_word(data: dict):
 async def remove_file(path):
     await asyncio.sleep(3)
     # delete docx file
-    os.remove(path)
-
+    try:
+        os.remove(path)
+    except FileNotFoundError:
+        return
