@@ -14,8 +14,18 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #151834;
-</string>
+   <string notr="true">QDialog {background-color: #151834;}
+QLabel { color: #fff}
+QLineEdit {
+	background-color: #2c325c;
+	color: #fff;
+border-radius: 10px;
+	padding-left: 10px;
+}
+QPushButton {background-color: #151834;
+background-color: #3b70eb;
+color: #fff;
+border-radius: 15px;}</string>
   </property>
   <widget class="QLineEdit" name="number_certificate">
    <property name="geometry">
@@ -33,10 +43,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -56,10 +63,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Порядковый номер (XX-XXXX)</string>
@@ -82,10 +85,6 @@ color: #fff;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Номер сертификата (XXX)</string>
@@ -110,10 +109,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -133,10 +129,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Наименование продукции (изделия)</string>
@@ -161,10 +153,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -184,10 +173,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Номер продукции (изделия)</string>
@@ -212,10 +197,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -237,10 +219,7 @@ padding: 10px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -260,10 +239,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Тип продукции (изделия)</string>
@@ -288,10 +263,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -311,10 +283,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Комплект</string>
@@ -339,10 +307,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -362,10 +327,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Номер Чертежа</string>
@@ -390,10 +351,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -413,10 +371,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Потребитель (организация)</string>
@@ -441,10 +395,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -464,10 +415,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Магазин производитель</string>
@@ -492,10 +439,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -515,10 +459,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Полное имя издателя сертификата</string>
@@ -543,10 +483,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -566,10 +503,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Технические условия</string>
@@ -594,10 +527,7 @@ color: #fff;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -618,10 +548,6 @@ padding: 10px;</string>
      <pointsize>10</pointsize>
     </font>
    </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
-   </property>
    <property name="text">
     <string>Дата выпуска</string>
    </property>
@@ -641,15 +567,14 @@ color: #fff;</string>
    <property name="font">
     <font>
      <family>Roboto</family>
-     <pointsize>11</pointsize>
+     <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #3b70eb;
-color: #fff;
-border-radius: 15px;</string>
+    <string notr="true">border: 1px solid #000;
+</string>
    </property>
    <property name="text">
     <string>Сохранить</string>
@@ -667,15 +592,14 @@ border-radius: 15px;</string>
    <property name="font">
     <font>
      <family>Roboto</family>
-     <pointsize>11</pointsize>
+     <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #3b70eb;
-color: #fff;
-border-radius: 15px;</string>
+    <string notr="true">border: 1px solid #000;
+</string>
    </property>
    <property name="text">
     <string>Закрыть</string>
@@ -697,10 +621,7 @@ border-radius: 15px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #2c325c;
-color: #fff;
-border-radius: 10px;
-padding: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -720,10 +641,6 @@ padding: 10px;</string>
      <family>Roboto Medium</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-color: #fff;</string>
    </property>
    <property name="text">
     <string>Номер заказа</string>
