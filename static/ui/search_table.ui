@@ -104,7 +104,7 @@ padding: 15px;
   <widget class="QPushButton" name="find_btn">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>410</x>
      <y>110</y>
      <width>41</width>
      <height>41</height>
@@ -118,7 +118,7 @@ border-radius: 20px;</string>
     <string>НАЙТИ</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -162,12 +162,29 @@ color: #3ef3d3;</string>
     </item>
    </layout>
   </widget>
-  <zorder>label_2</zorder>
+  <widget class="QPushButton" name="reset_search_btn">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>110</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 20px;</string>
+   </property>
+   <property name="text">
+    <string>СБРОСИТЬ</string>
+   </property>
+  </widget>
+  <zorder>layoutWidget</zorder>
   <zorder>table</zorder>
   <zorder>search_line</zorder>
   <zorder>search_criteria</zorder>
-  <zorder>label_3</zorder>
   <zorder>find_btn</zorder>
+  <zorder>reset_search_btn</zorder>
  </widget>
  <resources/>
  <connections/>
