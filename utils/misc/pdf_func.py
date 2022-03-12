@@ -14,6 +14,9 @@ def create_word(data: dict):
     doc.render(data)
     doc.save("res.docx")
 
+    # print file
+    os.startfile("res.docx", 'print')
+
     # call func printing file
     print("print_file")
 

@@ -13,16 +13,18 @@ class DataBase:
         self.db_name = database_name
         self.con = sqlite3.connect(self.db_name)
 
-    def get_certificate_for_pdf(self, index_number: int) -> list:
+    def get_certificate_for_pdf(self, index_number: int, certificate_number: str) -> list:
         """
         :param index_number порядковй номер сертификата
+        :param certificate_number порядковй номер сертификата
         :return: сертификат
         """
 
         cur = self.con.cursor()
 
         try:
-            cur.execute(f"SELECT all FROM certificates WHERE serial_number ='{index_number}'")
+            cur.execute(f"SELECT all FROM certificates WHERE index_number ={index_number} "
+                        f"AND certificate_number ='{certificate_number}'")
             return list(cur.fetchall())
         finally:
             cur.close()

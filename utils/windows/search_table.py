@@ -5,6 +5,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QMessageBox
 
 from .certificate_window import *
+from utils.misc.pdf_func import *
 
 
 class EmptyLineEdit(Exception):
@@ -112,5 +113,11 @@ class MainWindow(QMainWindow):
         pass
 
     def print_certificate(self):
-        path = ''
-        # os.startfile(path, 'print')
+        current_cp = self.table.currentRow()
+        if current_cp != -1:
+            pass
+            # запрос данных из бд
+            data = self.db.get_certificate_for_pdf(
+                self.table.item(current_cp, 0).text(), self.table.item(current_cp, 1).text())
+            print(data)
+            create_word(data)
