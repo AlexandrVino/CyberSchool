@@ -1,8 +1,11 @@
+import os
 import sqlite3
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QMessageBox
+
 from .certificate_window import *
+
 
 class EmptyLineEdit(Exception):
     pass
@@ -109,4 +112,5 @@ class MainWindow(QMainWindow):
         pass
 
     def print_certificate(self):
-        pass
+        path = ''
+        # os.startfile(path, 'print')
