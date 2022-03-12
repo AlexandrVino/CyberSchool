@@ -10,6 +10,7 @@ class Error(QDialog):
     def __init__(self, text: str, parent=None, function='error'):
         super().__init__(parent)
         self.connect_ui()
+        self.setWindowTitle('Проверка данных')
         self.label.setText(text)
         self.parent = parent
         self.function = function

@@ -21,7 +21,7 @@ class CertificateWindow(QDialog):
 
     def initUi(self):
         uic.loadUi('static/ui/certificate.ui', self)
-        self.setWindowTitle('Сертификат')
+        self.setWindowTitle('Создание сертификата')
         self.setWindowIcon(QIcon('static/ui/icon.ico'))
         self.connect_buttons()
         self.active = 0
