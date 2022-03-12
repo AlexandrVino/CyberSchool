@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>440</height>
+    <height>411</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -339,7 +339,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>280</y>
+     <y>250</y>
      <width>300</width>
      <height>20</height>
     </rect>
@@ -361,7 +361,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>280</y>
+     <y>250</y>
      <width>220</width>
      <height>20</height>
     </rect>
@@ -383,7 +383,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>310</y>
+     <y>280</y>
      <width>300</width>
      <height>20</height>
     </rect>
@@ -405,7 +405,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>310</y>
+     <y>280</y>
      <width>220</width>
      <height>20</height>
     </rect>
@@ -427,7 +427,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>340</y>
+     <y>310</y>
      <width>300</width>
      <height>20</height>
     </rect>
@@ -449,7 +449,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>340</y>
+     <y>310</y>
      <width>220</width>
      <height>20</height>
     </rect>
@@ -471,7 +471,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>370</y>
+     <y>340</y>
      <width>300</width>
      <height>20</height>
     </rect>
@@ -493,7 +493,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>370</y>
+     <y>340</y>
      <width>220</width>
      <height>20</height>
     </rect>
@@ -511,55 +511,11 @@ border-radius: 15px;}</string>
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="release_date">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>220</y>
-     <width>300</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Roboto Medium</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>220</y>
-     <width>220</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Roboto Medium</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Дата выпуска</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-   </property>
-  </widget>
   <widget class="QPushButton" name="save_btn">
    <property name="geometry">
     <rect>
      <x>395</x>
-     <y>400</y>
+     <y>370</y>
      <width>145</width>
      <height>31</height>
     </rect>
@@ -584,7 +540,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>400</y>
+     <y>370</y>
      <width>145</width>
      <height>31</height>
     </rect>
@@ -609,7 +565,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>250</y>
+     <y>220</y>
      <width>300</width>
      <height>20</height>
     </rect>
@@ -631,7 +587,7 @@ border-radius: 15px;}</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>250</y>
+     <y>220</y>
      <width>220</width>
      <height>20</height>
     </rect>

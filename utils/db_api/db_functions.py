@@ -24,8 +24,8 @@ class DataBase:
         cur = self.con.cursor()
 
         try:
-            cur.execute(f"SELECT all FROM certificates WHERE index_number ={index_number} "
-                        f"AND certificate_number ='{certificate_number}'")
+            cur.execute(f"SELECT * FROM certificates WHERE index_number = {index_number} "
+                        f"AND number_certificate ='{certificate_number}'")
             return list(cur.fetchall())
         finally:
             cur.close()
@@ -38,7 +38,7 @@ class DataBase:
         cur = self.con.cursor()
 
         try:
-            cur.execute(f"SELECT all FROM certificates")
+            cur.execute(f"SELECT * FROM certificates")
             return list(cur.fetchall())
         finally:
             cur.close()
@@ -71,7 +71,7 @@ class DataBase:
         добавляет сертификат в бд
         """
         list_of_value = list(dict_of_value.values())
-        print(list_of_value, len(list_of_value))
+
         cur = self.con.cursor()
         request = f'''INSERT OR IGNORE INTO certificates(index_number, number_certificate, product_name, product_number, 
             product_type, order_number, consumer_organization, shop_manufacturer, full_name_of_the_certificate_issuer, 
@@ -79,7 +79,7 @@ class DataBase:
             "{list_of_value[2]}", "{list_of_value[3]}", "{list_of_value[4]}", "{list_of_value[5]}", "{list_of_value[6]}", 
             "{list_of_value[7]}", "{list_of_value[8]}", "{list_of_value[9]}", "{list_of_value[10]}", "{list_of_value[11]}", 
             "{list_of_value[12]}");'''
-        print(request)
+
         cur.execute(request)
         self.con.commit()
         cur.close()

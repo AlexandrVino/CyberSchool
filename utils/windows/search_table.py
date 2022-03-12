@@ -1,3 +1,4 @@
+import datetime
 import os
 import sqlite3
 import sys
@@ -31,6 +32,7 @@ class MainWindow(QMainWindow):
         self.reset_search_btn.clicked.connect(self.reset_table)
         self.add_certificate_btn.clicked.connect(self.add_certificate)
         self.print_btn.clicked.connect(self.print_certificate)
+        self.table.cellClicked.connect(self.select_row)
 
     def fill_table(self, result):
         try:
@@ -114,6 +116,11 @@ class MainWindow(QMainWindow):
     def print_btn(self):
         pass
 
+    def select_row(self):
+        self.table.clearSelection()
+        row = self.table.currentRow()
+        self.table.selectRow(row)
+
     def print_certificate(self):
         current_cp = self.table.currentRow()
         if current_cp != -1:
@@ -121,5 +128,23 @@ class MainWindow(QMainWindow):
             # запрос данных из бд
             data = self.db.get_certificate_for_pdf(
                 self.table.item(current_cp, 0).text(), self.table.item(current_cp, 1).text())
-            print(data)
-            create_word(data)
+            if not any(data):
+                return
+            data = data[0]
+
+            json_data = {
+                "serial_number": data[1],
+                "number_certificate": data[2],
+                "product_name": data[3],
+                "product_number": data[4],
+                "product_type": data[5],
+                "order_number": data[6],
+                "consumer_organization": data[7],
+                "shop_manufacturer": data[8],
+                "full_name_of_the_certificate_issuer": data[9],
+                "kit": data[10],
+                "draft_number": data[11],
+                "release_date": datetime.now().strftime("%m/%d/%Y"),
+                "technical_conditions": data[13]
+            }
+            create_word(json_data)

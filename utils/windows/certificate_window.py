@@ -1,6 +1,8 @@
 import os
 import sqlite3
 import sys
+from datetime import datetime
+
 from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
@@ -21,7 +23,7 @@ class CertificateWindow(QDialog):
         self.active = 0
         self.line_edits = [
             self.index_number, self.number_certificate, self.product_name, self.kit, self.draft_number,
-            self.production_number, self.product_type, self.release_date, self.order_number, self.consumer_organization,
+            self.production_number, self.product_type, self.order_number, self.consumer_organization,
             self.shop_manufacturer, self.full_name_of_the_certificate_issuer, self.technical_conditions
         ]
         self.line_edits[self.active].setFocus()
@@ -65,7 +67,7 @@ class CertificateWindow(QDialog):
             "full_name_of_the_certificate_issuer": self.full_name_of_the_certificate_issuer.text(),
             "kit": self.kit.text(),
             "draft_number": self.draft_number.text(),
-            "release_date": self.release_date.text(),
+            "release_date": datetime.now().strftime("%m/%d/%Y"),
             "technical_conditions": self.technical_conditions.text()
         }
 
