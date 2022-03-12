@@ -4,12 +4,18 @@ from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QTableWidgetItem, QMessageBox
+from .error import Error
 
 
 class CertificateWindow(QDialog):
-    def __init__(self):
+    def __init__(self, db):
         super().__init__()
         self.initUi()
+        self.db = db
+
+    def initUi(self):
+        uic.loadUi('static/ui/certificate.ui', self)
+        self.connect_buttons()
         self.active = 0
         self.line_edits = [
             self.index_number, self.number_certificate, self.product_name, self.kit, self.draft_number,
@@ -17,10 +23,6 @@ class CertificateWindow(QDialog):
             self.full_name_of_the_certificate_issuer, self.technical_conditions
         ]
         self.line_edits[self.active].setFocus()
-
-    def initUi(self):
-        uic.loadUi('../../static/ui/certificate.ui', self)
-        self.connect_buttons()
 
     def connect_buttons(self):
         self.save_btn.clicked.connect(self.save_changes)
@@ -43,6 +45,12 @@ class CertificateWindow(QDialog):
         event.accept()
 
     def save_changes(self):
+        Error('Пожалуйста проверьте данные!', self).show()
+
+    def cancel_window(self):
+        self.destroy()
+
+    def save_after_accept(self):
         json_data = {
             "serial_number": self.index_number.text(),
             "number_certificate": self.number_certificate.text(),
@@ -58,22 +66,5 @@ class CertificateWindow(QDialog):
             "release_date": self.release_date.text(),
             "technical_conditions": self.technical_conditions.text()
         }
-
-    def cancel_window(self):
-        self.destroy()
-
-
-if __name__ == '__main__':
-    sys.__excepthook__ = sys.__excepthook__
-
-
-    def exception_hook(exctype, value, traceback):
-        sys._excepthook(exctype, value, traceback)
-        sys.exit(1)
-
-
-    app = QApplication(sys.argv)
-    window = CertificateWindow()
-    window.show()
-    sys.exit(app.exec())
-    sys.excepthook = exception_hook
+        
+        self.db.add_certificate(json_data)
