@@ -7,8 +7,8 @@ cur = conn.cursor()
 #Create certificates table and fill data
 cur.execute("""CREATE TABLE IF NOT EXISTS certificates(
    id INTEGER PRIMARY KEY AUTOINCREMENT,
-   serial_number INT,
-   number_certificate INT,
+   index_number INT,
+   number_certificate TEXT,
    product_name TEXT, 
    product_type TEXT,
    order_number INT,
