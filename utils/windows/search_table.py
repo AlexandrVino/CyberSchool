@@ -28,6 +28,8 @@ class MainWindow(QMainWindow):
         self.initUi()
 
     def initUi(self):
+        self.setWindowTitle('Сертификат')
+        self.setWindowIcon(QIcon('static/ui/icon.ico'))
         self.find_btn.clicked.connect(self.find_in_table)
         self.reset_search_btn.clicked.connect(self.reset_table)
         self.add_certificate_btn.clicked.connect(self.add_certificate)

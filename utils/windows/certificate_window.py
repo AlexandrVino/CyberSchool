@@ -6,6 +6,7 @@ from datetime import datetime
 from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QDialog, QTableWidgetItem, QMessageBox
 
 from .error import Error
@@ -20,6 +21,8 @@ class CertificateWindow(QDialog):
 
     def initUi(self):
         uic.loadUi('static/ui/certificate.ui', self)
+        self.setWindowTitle('Сертификат')
+        self.setWindowIcon(QIcon('static/ui/icon.ico'))
         self.connect_buttons()
         self.active = 0
         self.line_edits = [
