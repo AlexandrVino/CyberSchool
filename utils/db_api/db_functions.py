@@ -82,7 +82,7 @@ class DataBase:
                         f"VALUES({list_of_value[0]}, {list_of_value[1]}, {list_of_value[3]}, {list_of_value[4]},"
                         f" {list_of_value[5]}, {list_of_value[6]}, {list_of_value[7]}, {list_of_value[8]},"
                         f" {list_of_value[9]}, {list_of_value[10]}, {list_of_value[11]}, "
-                        f" {list_of_value[12]}, {list_of_value[13]}, {list_of_value[13]};")
+                        f" {list_of_value[12]}, {list_of_value[13]}, {list_of_value[14]};")
         finally:
             self.con.commit()
             cur.close()
