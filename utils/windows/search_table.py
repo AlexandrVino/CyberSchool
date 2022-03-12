@@ -34,6 +34,14 @@ class MainWindow(QMainWindow):
         self.print_btn.clicked.connect(self.print_certificate)
         self.table.cellClicked.connect(self.select_row)
 
+    @staticmethod
+    def add_changes_in_table(widget, *args):
+        print(args)
+        if any(args):
+            widget.insertRow(0)
+            for i, arg in enumerate(args):
+                widget.setItem(0, i, QTableWidgetItem(str(arg)))
+
     def fill_table(self, result):
         try:
             if not result:

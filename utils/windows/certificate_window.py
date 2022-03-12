@@ -14,6 +14,7 @@ from .error import Error
 class CertificateWindow(QDialog):
     def __init__(self, parent, db):
         super().__init__(parent)
+        self.parent = parent
         self.initUi()
         self.db = db
 
@@ -84,6 +85,8 @@ class CertificateWindow(QDialog):
                 or len(json_data['number_certificate'].split('-')) != 2:
             Error('Номер сертификата должен\nбыть в формате: XX-XXXX!', self).show()
             return
+
+        self.parent.add_changes_in_table(self.parent.table, *json_data.values())
 
         self.db.add_certificate(json_data)
         self.destroy()

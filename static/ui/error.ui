@@ -13,6 +13,17 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {background-color: #151834;}
+QLabel { color: #fff}
+QPushButton {background-color: #151834;
+width: 80px;
+height: 30px;
+background-color: #3b70eb;
+color: #fff;
+	font: 57 11pt &quot;Roboto Medium&quot;;
+border-radius: 15px;}</string>
+  </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
@@ -21,6 +32,14 @@
      <width>200</width>
      <height>30</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Roboto</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -37,6 +56,12 @@
      <width>200</width>
      <height>50</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Roboto Medium</family>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
