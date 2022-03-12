@@ -33,7 +33,7 @@ class MainWindow(QMainWindow):
             if not result:
                 raise EmptyResult
         except EmptyResult:
-            self.error_message(f'Ничего не найдено')
+            # self.error_message(f'Ничего не найдено')
             return
         self.table.setRowCount(len(result))
         self.table.setColumnCount(len(result[0]))
