@@ -75,8 +75,10 @@ class DataBase:
 
         try:
             cur.execute(f"INSERT OR IGNORE INTO certificates(index_number, number_certificate, "
-                        f"product_name, product_type, order_number, "
-                        f"consumer_organization, shop_manufacturer, release_date, full_name_of_the_certificate_issuer) "
+                        f"product_name, product_number, product_type, order_number, "
+                        f"consumer_organization, shop_manufacturer, release_date, "
+                        f"full_name_of_the_certificate_issuer, kit, draft_number, release_date, technical_conditions"
+                        f") "
                         f"VALUES({list_of_value[0]}, {list_of_value[1]}, {list_of_value[3]}, {list_of_value[4]},"
                         f" {list_of_value[5]}, {list_of_value[6]}, {list_of_value[7]}, {list_of_value[8]},"
                         f" {list_of_value[9]}, {list_of_value[10]}, {list_of_value[11]}, "
