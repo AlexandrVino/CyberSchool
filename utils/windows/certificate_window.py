@@ -4,7 +4,7 @@ from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QTableWidgetItem, QMessageBox
-
+import os
 from .error import Error
 
 
@@ -20,8 +20,8 @@ class CertificateWindow(QDialog):
         self.active = 0
         self.line_edits = [
             self.index_number, self.number_certificate, self.product_name, self.kit, self.draft_number,
-            self.order_number, self.product_type, self.release_date, self.consumer_organization, self.shop_manufacturer,
-            self.full_name_of_the_certificate_issuer, self.technical_conditions
+            self.production_number, self.product_type, self.release_date, self.order_number, self.consumer_organization,
+            self.shop_manufacturer, self.full_name_of_the_certificate_issuer, self.technical_conditions
         ]
         self.line_edits[self.active].setFocus()
 
@@ -58,7 +58,7 @@ class CertificateWindow(QDialog):
             "product_name": self.product_name.text(),
             "product_number": self.index_number.text(),
             "product_type": self.order_number.text(),
-            "order_number": "self.order_number.text()",
+            "order_number": self.order_number.text(),
             "consumer_organization": self.consumer_organization.text(),
             "shop_manufacturer": self.shop_manufacturer.text(),
             "full_name_of_the_certificate_issuer": self.full_name_of_the_certificate_issuer.text(),
@@ -70,6 +70,16 @@ class CertificateWindow(QDialog):
 
         if not all(value != '' for value in json_data.values()):
             Error('Пожалуйста заполните данные\nкорректно!', self).show()
+            return
+
+        if not json_data['serial_number'].isnumeric():
+            Error('Номер сертификата должен\nбыть числом! (XXX)', self).show()
+            return
+
+        lens = [2, 4]
+        if not all(x.isnumeric() and len(x) == lens[i]
+                   for i, x in enumerate(json_data['number_certificate'].split('-'))):
+            Error('Номер сертификата должен\nбыть в формате: XX-XXXX!', self).show()
             return
 
         self.db.add_certificate(json_data)
