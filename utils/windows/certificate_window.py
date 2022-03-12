@@ -1,10 +1,11 @@
+import os
 import sqlite3
 import sys
 from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QTableWidgetItem, QMessageBox
-import os
+
 from .error import Error
 
 
@@ -77,9 +78,11 @@ class CertificateWindow(QDialog):
             return
 
         lens = [2, 4]
-        if not all(x.isnumeric() and len(x) == lens[i]
-                   for i, x in enumerate(json_data['number_certificate'].split('-'))):
+        if not all(x.isnumeric() and len(x) == lens[i] for i, x in
+                   enumerate(json_data['number_certificate'].split('-'))) and len(
+                json_data['number_certificate'].split('-')) == 2:
             Error('Номер сертификата должен\nбыть в формате: XX-XXXX!', self).show()
             return
 
         self.db.add_certificate(json_data)
+        self.destroy()
