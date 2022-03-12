@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>893</width>
+    <width>1073</width>
     <height>485</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
    <widget class="QPushButton" name="print_btn">
     <property name="geometry">
      <rect>
-      <x>840</x>
+      <x>1020</x>
       <y>360</y>
       <width>41</width>
       <height>41</height>
@@ -55,7 +55,7 @@ border-radius: 20px;</string>
      <rect>
       <x>10</x>
       <y>155</y>
-      <width>811</width>
+      <width>1001</width>
       <height>301</height>
      </rect>
     </property>
@@ -69,13 +69,15 @@ border-radius: 20px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #2c325c;
-border-radius: 10px;</string>
+border-radius: 10px;
+color: #fff;
+</string>
     </property>
    </widget>
    <widget class="QPushButton" name="reset_search_btn">
     <property name="geometry">
      <rect>
-      <x>840</x>
+      <x>1020</x>
       <y>260</y>
       <width>41</width>
       <height>41</height>
@@ -107,7 +109,7 @@ border-radius: 20px;</string>
    <widget class="QPushButton" name="add_certificate_btn">
     <property name="geometry">
      <rect>
-      <x>840</x>
+      <x>1020</x>
       <y>310</y>
       <width>41</width>
       <height>41</height>
@@ -139,9 +141,9 @@ border-radius: 20px;</string>
    <widget class="QComboBox" name="search_criteria">
     <property name="geometry">
      <rect>
-      <x>519</x>
+      <x>609</x>
       <y>90</y>
-      <width>301</width>
+      <width>401</width>
       <height>30</height>
      </rect>
     </property>
@@ -204,7 +206,7 @@ border: null;</string>
    <widget class="QPushButton" name="find_btn">
     <property name="geometry">
      <rect>
-      <x>840</x>
+      <x>1020</x>
       <y>210</y>
       <width>41</width>
       <height>41</height>
@@ -241,7 +243,7 @@ border-radius: 20px;</string>
      <rect>
       <x>10</x>
       <y>90</y>
-      <width>501</width>
+      <width>591</width>
       <height>30</height>
      </rect>
     </property>
@@ -264,7 +266,7 @@ padding: 4px;</string>
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>871</width>
+      <width>1051</width>
       <height>36</height>
      </rect>
     </property>
@@ -290,7 +292,7 @@ font-size: 25px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>893</width>
+     <width>1073</width>
      <height>21</height>
     </rect>
    </property>

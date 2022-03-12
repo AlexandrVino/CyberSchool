@@ -79,8 +79,8 @@ class CertificateWindow(QDialog):
 
         lens = [2, 4]
         if not all(x.isnumeric() and len(x) == lens[i] for i, x in
-                   enumerate(json_data['number_certificate'].split('-'))) and len(
-                json_data['number_certificate'].split('-')) == 2:
+                   enumerate(json_data['number_certificate'].split('-'))) or len(
+                json_data['number_certificate'].split('-')) != 2:
             Error('Номер сертификата должен\nбыть в формате: XX-XXXX!', self).show()
             return
 

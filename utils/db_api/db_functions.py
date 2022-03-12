@@ -71,19 +71,16 @@ class DataBase:
         добавляет сертификат в бд
         """
         list_of_value = list(dict_of_value.values())
+        print(list_of_value, len(list_of_value))
         cur = self.con.cursor()
-        request = (f"INSERT OR IGNORE INTO certificates(index_number, number_certificate, "
-                  f"product_name, product_number, product_type, order_number, "
-                  f"consumer_organization, shop_manufacturer, "
-                  f"full_name_of_the_certificate_issuer, kit, draft_number, release_date, technical_conditions"
-                    f") "
-                    f"VALUES({list_of_value[0]}, {list_of_value[1]}, {list_of_value[3]}, {list_of_value[4]},"
-                    f" {list_of_value[5]}, {list_of_value[6]}, {list_of_value[7]}, {list_of_value[8]},"
-                    f" {list_of_value[9]}, {list_of_value[10]}, {list_of_value[11]}, "
-                    f" {list_of_value[12]}, {list_of_value[13]};")
+        request = f'''INSERT OR IGNORE INTO certificates(index_number, number_certificate, product_name, product_number, 
+            product_type, order_number, consumer_organization, shop_manufacturer, full_name_of_the_certificate_issuer, 
+            kit, draft_number, release_date, technical_conditions) VALUES({list_of_value[0]}, "{list_of_value[1]}", 
+            "{list_of_value[2]}", "{list_of_value[3]}", "{list_of_value[4]}", "{list_of_value[5]}", "{list_of_value[6]}", 
+            "{list_of_value[7]}", "{list_of_value[8]}", "{list_of_value[9]}", "{list_of_value[10]}", "{list_of_value[11]}", 
+            "{list_of_value[12]}");'''
+        print(request)
         cur.execute(request)
         self.con.commit()
         cur.close()
         return 1
-
-

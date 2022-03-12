@@ -2,7 +2,7 @@ import os
 import sqlite3
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QMessageBox, QAbstractItemView
 
 from .certificate_window import *
 from utils.misc.pdf_func import *
@@ -40,12 +40,14 @@ class MainWindow(QMainWindow):
             # self.error_message(f'Ничего не найдено')
             return
         self.table.setRowCount(len(result))
+        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.table.setColumnCount(len(result[0]))
         headers_name = ['№ п/п', '№ сертификата', 'наименование продукции', 'тип изделия', '№ заказа',
                         'организация', 'потребитель', 'ФИО выдавшего сертификат']
         # Создали заголовки к колонкам
         for i, elem in enumerate(headers_name):
             header = QTableWidgetItem(elem)
+            header.setBackground(QtGui.QColor('#2c325c'))
             self.table.setHorizontalHeaderItem(i, header)
         # Заполнили таблицу полученными элементами
         for i, elem in enumerate(result):
