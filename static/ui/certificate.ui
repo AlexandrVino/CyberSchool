@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #fff;</string>
+  </property>
   <widget class="QLineEdit" name="number_certificate">
    <property name="geometry">
     <rect>
@@ -582,6 +585,10 @@ border-bottom: 1px solid #000;</string>
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid #000;
+</string>
+   </property>
    <property name="text">
     <string>Сохранить</string>
    </property>
@@ -602,6 +609,10 @@ border-bottom: 1px solid #000;</string>
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid #000;
+</string>
    </property>
    <property name="text">
     <string>Закрыть</string>

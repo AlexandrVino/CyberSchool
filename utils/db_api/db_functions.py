@@ -11,6 +11,7 @@ class DataBase:
 
     def __init__(self, database_name: str):
         self.db_name = database_name
+        self.con = sqlite3.connect(self.db_name)
 
     def get_certificate_for_pdf(self, index_number: int) -> list:
         """
@@ -18,15 +19,26 @@ class DataBase:
         :return: сертификат
         """
 
-        con = sqlite3.connect(self.db_name)
-        cur = con.cursor()
+        cur = self.con.cursor()
 
         try:
             cur.execute(f"SELECT all FROM certificates WHERE serial_number ='{index_number}'")
             return list(cur.fetchall())
         finally:
             cur.close()
-            con.close()
+
+    def get_certificates(self) -> list:
+        """
+        :return: сертификаты
+        """
+
+        cur = self.con.cursor()
+
+        try:
+            cur.execute(f"SELECT all FROM certificates")
+            return list(cur.fetchall())
+        finally:
+            cur.close()
 
     def is_certificate_presents(self, index_number: int) -> bool:
         """
@@ -36,8 +48,7 @@ class DataBase:
 
         # я бы возвращал bool))
 
-        con = sqlite3.connect(self.db_name)
-        cur = con.cursor()
+        cur = self.con.cursor()
 
         try:
             cur.execute(f"INSERT OR IGNORE INTO certificates(index_number) "
@@ -45,7 +56,7 @@ class DataBase:
         except ErrorCertificate:
             return 1
         finally:
-            con.commit()
+            self.con.commit()
             cur.close()
             return 0
 
@@ -55,13 +66,12 @@ class DataBase:
         :return: None
         добавляет сертификат в бд
         """
-        con = sqlite3.connect(self.db_name)
-        cur = con.cursor()
+        cur = self.con.cursor()
 
         try:
             cur.execute(f"INSERT OR IGNORE INTO certificates() "
                         f"VALUES();")
         finally:
-            con.commit()
+            self.con.commit()
             cur.close()
             return 1

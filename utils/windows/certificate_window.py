@@ -9,8 +9,8 @@ from .error import Error
 
 
 class CertificateWindow(QDialog):
-    def __init__(self, db):
-        super().__init__()
+    def __init__(self, parent, db):
+        super().__init__(parent)
         self.initUi()
         self.db = db
 

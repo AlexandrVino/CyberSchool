@@ -1,255 +1,260 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>996</width>
-    <height>583</height>
+    <width>941</width>
+    <height>483</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>MainWindow</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #2c325c;
 </string>
   </property>
-  <widget class="QTableWidget" name="table">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>180</y>
-     <width>921</width>
-     <height>301</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="print_btn">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>60</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../image/design/button_icons/printer.png</normaloff>../image/design/button_icons/printer.png</iconset>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="table">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>921</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
 border-radius: 10px;</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="search_line">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>120</y>
-     <width>231</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_search_btn">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>60</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../image/design/button_icons/reset.png</normaloff>../image/design/button_icons/reset.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_certificate_btn">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>60</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../image/design/button_icons/plus.png</normaloff>../image/design/button_icons/plus.png</iconset>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="search_criteria">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>70</y>
+      <width>221</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Поиск по порядковому номеру</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Поиск по номеру сертификата</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Поиск по наименованию продукции?</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Поиск по типу изделия</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Поиск по номеру заказа</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Поиск по организации</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Поиск по потребителю</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Поиск по ФИО выдавшего сертификат</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>128</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true">color: #ffcc00;
+font-size: 30px;</string>
+       </property>
+       <property name="text">
+        <string>П</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">color: white;</string>
+       </property>
+       <property name="text">
+        <string>оиск по таблиц</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="styleSheet">
+        <string notr="true">font-size: 30px;
+color: #3ef3d3;</string>
+       </property>
+       <property name="text">
+        <string>Е</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="find_btn">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>60</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../image/design/button_icons/search.png</normaloff>../image/design/button_icons/search.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="search_line">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
 border-radius: 10px;
 padding: 4px;</string>
-   </property>
+    </property>
+   </widget>
   </widget>
-  <widget class="QComboBox" name="search_criteria">
+  <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>120</y>
-     <width>221</width>
+     <x>0</x>
+     <y>0</y>
+     <width>941</width>
      <height>21</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>Поиск по порядковому номеру</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Поиск по номеру сертификата</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Поиск по наименованию продукции?</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Поиск по типу изделия</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Поиск по номеру заказа</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Поиск по организации</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Поиск по потребителю</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Поиск по ФИО выдавшего сертификат</string>
-    </property>
-   </item>
   </widget>
-  <widget class="QPushButton" name="find_btn">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>110</y>
-     <width>41</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="mouseTracking">
-    <bool>false</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius: 20px;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../image/design/button_icons/search.png</normaloff>../image/design/button_icons/search.png</iconset>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>60</y>
-     <width>128</width>
-     <height>38</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="styleSheet">
-       <string notr="true">color: #ffcc00;
-font-size: 30px;</string>
-      </property>
-      <property name="text">
-       <string>П</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="styleSheet">
-       <string notr="true">color: white;</string>
-      </property>
-      <property name="text">
-       <string>оиск по таблиц</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_3">
-      <property name="styleSheet">
-       <string notr="true">font-size: 30px;
-color: #3ef3d3;</string>
-      </property>
-      <property name="text">
-       <string>Е</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QPushButton" name="reset_search_btn">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>110</y>
-     <width>41</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius: 20px;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../image/design/button_icons/reset.png</normaloff>../image/design/button_icons/reset.png</iconset>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="add_certificate_btn">
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>110</y>
-     <width>41</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius: 20px;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../image/design/button_icons/plus.png</normaloff>../image/design/button_icons/plus.png</iconset>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="print_btn">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>110</y>
-     <width>41</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius: 20px;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../image/design/button_icons/printer.png</normaloff>../image/design/button_icons/printer.png</iconset>
-   </property>
-  </widget>
-  <zorder>layoutWidget</zorder>
-  <zorder>table</zorder>
-  <zorder>search_line</zorder>
-  <zorder>search_criteria</zorder>
-  <zorder>find_btn</zorder>
-  <zorder>reset_search_btn</zorder>
-  <zorder>add_certificate_btn</zorder>
-  <zorder>print_btn</zorder>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

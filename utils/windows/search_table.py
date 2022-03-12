@@ -1,8 +1,8 @@
-from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QWidget, QTableWidgetItem, QMessageBox
-import sys
 import sqlite3
-
+import sys
+from PyQt5 import uic
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QMessageBox
+from .certificate_window import *
 
 class EmptyLineEdit(Exception):
     pass
@@ -12,11 +12,11 @@ class EmptyResult(Exception):
     pass
 
 
-class TableWindow(QWidget):
-    def __init__(self):
+class MainWindow(QMainWindow):
+    def __init__(self, db):
         super().__init__()
-        uic.loadUi('../../static/ui/search_table.ui', self)  # Загружаем дизайн
-        self.con = sqlite3.connect('../../static/database/db.db')
+        uic.loadUi('static/ui/search_table.ui', self)  # Загружаем дизайн
+        self.db = db
         self.columns_name = ['index_number', 'number_certificate', 'product_name', 'product_type', 'order_number',
                              'consumer_organization', 'shop_manufacturer', 'full_name_of_the_certificate_issuer']
         self.reset_table()
@@ -38,7 +38,7 @@ class TableWindow(QWidget):
         self.table.setRowCount(len(result))
         self.table.setColumnCount(len(result[0]))
         headers_name = ['№ п/п', '№ сертификата', 'наименование продукции', 'тип изделия', '№ заказа',
-                  'организация', 'потребитель', 'ФИО выдавшего сертификат']
+                        'организация', 'потребитель', 'ФИО выдавшего сертификат']
         # Создали заголовки к колонкам
         for i, elem in enumerate(headers_name):
             header = QTableWidgetItem(elem)
@@ -49,8 +49,8 @@ class TableWindow(QWidget):
                 self.table.setItem(i, j, QTableWidgetItem(str(val)))
         self.table.horizontalHeader().setStretchLastSection(True)
 
-    def reset_table(self): # Возвращение таблицы к первоначальному состоянию
-        cur = self.con.cursor()
+    def reset_table(self):  # Возвращение таблицы к первоначальному состоянию
+        cur = self.db.con.cursor()
         self.fill_table(cur.execute(f"SELECT certificates.index_number, "
                                     f"certificates.number_certificate, "
                                     f"certificates.product_name, "
@@ -62,7 +62,7 @@ class TableWindow(QWidget):
         self.search_line.setText("")
 
     def find_in_table(self):
-        cur = self.con.cursor()
+        cur = self.db.con.cursor()
         try:
             request = self.search_line.text()
             if not request:
@@ -103,22 +103,10 @@ class TableWindow(QWidget):
         msg.exec_()
 
     def add_certificate(self):
-        pass
+        CertificateWindow(self, self.db).show()
 
     def print_btn(self):
         pass
 
-if __name__ == '__main__':
-    sys.__excepthook__ = sys.__excepthook__
-
-
-    def exception_hook(exctype, value, traceback):
-        sys._excepthook(exctype, value, traceback)
-        sys.exit(1)
-
-
-    app = QApplication(sys.argv)
-    window = TableWindow()
-    window.show()
-    sys.exit(app.exec())
-    sys.excepthook = exception_hook
+    def print_certificate(self):
+        pass
