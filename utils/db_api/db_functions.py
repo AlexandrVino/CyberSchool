@@ -1,5 +1,6 @@
 import sqlite3
 
+
 class ErrorCertificate(Exception):
     pass
 
@@ -57,6 +58,7 @@ class DataBase:
                         f"VALUES({index_number});")
         except ErrorCertificate:
             return 1
+
         finally:
             self.con.commit()
             cur.close()
@@ -68,12 +70,19 @@ class DataBase:
         :return: None
         добавляет сертификат в бд
         """
+        list_of_value = dict_of_value.values()
         cur = self.con.cursor()
 
         try:
-            cur.execute(f"INSERT OR IGNORE INTO certificates() "
-                        f"VALUES();")
+            cur.execute(f"INSERT OR IGNORE INTO certificates(index_number, number_certificate, "
+                        f"product_name, product_type, order_number, "
+                        f"consumer_organization, shop_manufacturer, release_date, full_name_of_the_certificate_issuer) "
+                        f"VALUES({list_of_value[0]}, {list_of_value[1]}, {list_of_value[3]}, {list_of_value[4]},"
+                        f" {list_of_value[5]}, {list_of_value[6]}, {list_of_value[7]}, {list_of_value[8]},"
+                        f" {list_of_value[9]}, {list_of_value[10]}, {list_of_value[11]}, "
+                        f" {list_of_value[12]}, {list_of_value[13]};")
         finally:
             self.con.commit()
             cur.close()
             return 1
+
