@@ -56,28 +56,33 @@ class MainWindow(QMainWindow):
                 widget.setItem(0, i, QTableWidgetItem(str(arg)))
 
     def fill_table(self, result):
+
+        headers_name = ['№ п/п', '№ сертификата', 'наименование продукции', 'тип изделия', '№ заказа',
+                        'организация', 'потребитель', 'ФИО выдавшего сертификат']
+        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.table.setColumnCount(len(headers_name))
+        self.table.horizontalHeader().setStretchLastSection(True)
+
+        # Создали заголовки к колонкам
+        for i, elem in enumerate(headers_name):
+            header = QTableWidgetItem(elem)
+            header.setBackground(QtGui.QColor('#2c325c'))
+            self.table.setHorizontalHeaderItem(i, header)
+
         try:
             if not result:
                 raise EmptyResult
         except EmptyResult:
             # self.error_message(f'Ничего не найдено')
             return
+
         self.table.setRowCount(len(result))
-        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.table.setColumnCount(len(result[0]))
-        headers_name = ['№ п/п', '№ сертификата', 'наименование продукции', 'тип изделия', '№ заказа',
-                        'организация', 'потребитель', 'ФИО выдавшего сертификат']
-        # Создали заголовки к колонкам
-        for i, elem in enumerate(headers_name):
-            header = QTableWidgetItem(elem)
-            header.setBackground(QtGui.QColor('#2c325c'))
-            self.table.setHorizontalHeaderItem(i, header)
+
         # Заполнили таблицу полученными элементами
         result.reverse()
         for i, elem in enumerate(result):
             for j, val in enumerate(elem):
                 self.table.setItem(i, j, QTableWidgetItem(str(val)))
-        self.table.horizontalHeader().setStretchLastSection(True)
 
     def reset_table(self):  # Возвращение таблицы к первоначальному состоянию
         cur = self.db.con.cursor()
