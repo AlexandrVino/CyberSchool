@@ -14,5 +14,5 @@ if __name__ == '__main__':
     app.setStyle(QStyleFactory.create('Fusion'))
     window = MainWindow(db)
     window.show()
-    sys.exit(app.exec())
     sys.excepthook = exception_hook
+    sys.exit(app.exec())
