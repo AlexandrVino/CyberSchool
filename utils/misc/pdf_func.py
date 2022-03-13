@@ -33,5 +33,5 @@ async def remove_file(path):
     # delete docx file
     try:
         os.remove(path)
-    except FileNotFoundError:
+    except PermissionError:
         return
