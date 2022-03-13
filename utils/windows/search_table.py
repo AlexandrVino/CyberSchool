@@ -42,7 +42,7 @@ class MainWindow(QMainWindow):
 
         if any(json_data):
             result = [
-                json_data['serial_number'],
+                json_data['index_number'],
                 json_data['number_certificate'],
                 json_data['product_name'],
                 json_data['product_type'],
@@ -155,7 +155,7 @@ class MainWindow(QMainWindow):
             data = data[0]
 
             json_data = {
-                "serial_number": data[1],
+                "index_number": data[1],
                 "number_certificate": data[2],
                 "product_name": data[3],
                 "product_number": data[4],

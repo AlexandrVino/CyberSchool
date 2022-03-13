@@ -60,7 +60,7 @@ class CertificateWindow(QDialog):
 
     def save_after_accept(self):
         json_data = {
-            "serial_number": self.index_number.text(),
+            "index_number": self.index_number.text(),
             "number_certificate": self.number_certificate.text(),
             "product_name": self.product_name.text(),
             "product_number": self.index_number.text(),
@@ -79,7 +79,7 @@ class CertificateWindow(QDialog):
             Error('Пожалуйста заполните данные\nкорректно!', self).show()
             return
 
-        if not json_data['serial_number'].isnumeric() or len(json_data['serial_number']) != 3:
+        if not json_data['index_number'].isnumeric() or len(json_data['index_number']) != 3:
             Error('Номер сертификата должен\nбыть числом! (XXX)', self).show()
             return
 
@@ -88,8 +88,11 @@ class CertificateWindow(QDialog):
                 or len(json_data['number_certificate'].split('-')) != 2:
             Error('Номер сертификата должен\nбыть в формате: XX-XXXX!', self).show()
             return
+        if not any(self.db.get_certificate_for_pdf(json_data['index_number'], json_data['number_certificate'])):
+            self.db.add_certificate(json_data)
+            self.parent.add_changes_in_table(self.parent.table, json_data)
 
-        self.parent.add_changes_in_table(self.parent.table, json_data)
-
-        self.db.add_certificate(json_data)
-        self.destroy()
+            self.destroy()
+        else:
+            Error('Сертификат с этим номером\nуже добавлен!', self).show()
+            return
