@@ -37,11 +37,22 @@ class MainWindow(QMainWindow):
         self.table.cellClicked.connect(self.select_row)
 
     @staticmethod
-    def add_changes_in_table(widget, *args):
-        print(args)
-        if any(args):
+    def add_changes_in_table(widget, json_data):
+        print(json_data)
+
+        if any(json_data):
+            result = [
+                json_data['serial_number'],
+                json_data['number_certificate'],
+                json_data['product_name'],
+                json_data['product_type'],
+                json_data['order_number'],
+                json_data['consumer_organization'],
+                json_data['shop_manufacturer'],
+                json_data['full_name_of_the_certificate_issuer']
+            ]
             widget.insertRow(0)
-            for i, arg in enumerate(args):
+            for i, arg in enumerate(result):
                 widget.setItem(0, i, QTableWidgetItem(str(arg)))
 
     def fill_table(self, result):
@@ -62,6 +73,7 @@ class MainWindow(QMainWindow):
             header.setBackground(QtGui.QColor('#2c325c'))
             self.table.setHorizontalHeaderItem(i, header)
         # Заполнили таблицу полученными элементами
+        result.reverse()
         for i, elem in enumerate(result):
             for j, val in enumerate(elem):
                 self.table.setItem(i, j, QTableWidgetItem(str(val)))

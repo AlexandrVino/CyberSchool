@@ -89,7 +89,7 @@ class CertificateWindow(QDialog):
             Error('Номер сертификата должен\nбыть в формате: XX-XXXX!', self).show()
             return
 
-        self.parent.add_changes_in_table(self.parent.table, *json_data.values())
+        self.parent.add_changes_in_table(self.parent.table, json_data)
 
         self.db.add_certificate(json_data)
         self.destroy()
