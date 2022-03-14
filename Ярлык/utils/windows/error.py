@@ -26,7 +26,8 @@ class Error(QDialog):
         for btn in self.buttonBox.buttons():
             if btn.text() == 'OK':
                 btn.clicked.connect(self.save_finish)
-                break
+            elif btn.text() == 'Cancel':
+                btn.setText('Закрыть')
 
     def save_finish(self):
         if self.function == 'accept':
